@@ -1,8 +1,10 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  place-items: flex-start;
 }
 
 .logo {
@@ -39,4 +41,93 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6em;
+  padding: 0 2vw;
+  background-color: rgb(0, 97, 170);
+  color: #ffda6c;
+}
+
+.header__title {
+  font-size: 1.6em;
+}
+
+.header__logo {
+  width: 226px;
+  height: 80px;
+}
+
+.header__item {
+  width: 20%;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 15px;
+}
+
+.header__nav a {
+  display: flex;
+  justify-content: end;
+  color: #ffda6c;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+}
+
+.header__nav a:hover,
+.header__nav a:hover {
+  display: flex;
+  color: #d8a200;
+}
+
+.page {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 720px;
+}
+
+.page__content {
+  display: flex;
+  justify-content: center;
+  padding: 1.4em;
+}
+
+.about {
+  text-align: center;
+}
+
+.about__content {
+  
+  width: 60%;
+  margin: 0 auto;
+}
+
+.about__img {
+  max-width: 100%;
+  margin: 25px auto 0;
+}
+
+input.search {
+  width: 360px;
+  height: 50px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: rgb(67, 140, 196);
+  color: rgb(0, 59, 105);
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+input.search:focus {
+  box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
+  -webkit-box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
+  -moz-box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
 }

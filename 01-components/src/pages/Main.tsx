@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from 'react';
+import Layout from '../components/Layout';
 import SearchBar from '../components/SearchBar';
 
 class Main extends React.Component<{}, { searchBarValue: string }> {
@@ -25,11 +26,15 @@ class Main extends React.Component<{}, { searchBarValue: string }> {
   }
 
   render() {
+    let currPage = window.location.pathname.slice(1);
+    if (currPage.length === 0) {
+      currPage = 'Home'
+    }
+
     return (
-      <div>
-        <h1>This is main page</h1>
+      <Layout currentPage={currPage}>
         <SearchBar value={this.state.searchBarValue} onChange={this.onChange} />
-      </div>
+      </Layout>
     );
   }
 }

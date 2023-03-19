@@ -1,11 +1,19 @@
-import { Link } from 'react-router-dom';
+import Layout from '../components/Layout';
 
 const About = () => {
-    return (
-        <div>
-            <h1>About this tiny app</h1>
-        </div>
-    )
-}
+  const currPage = window.location.pathname.slice(1);
+  return (
+    <Layout currentPage={currPage}>
+      <div className="about">
+        <h2>About this tiny app</h2>
+        <p className="about__content">
+          This is a small database of the Pokémon universe. Here you can find the name, type and
+          image of some Pokémon.
+        </p>
+        <img className="about__img" src="./public/universe.webp"></img>
+      </div>
+    </Layout>
+  );
+};
 
 export { About };
