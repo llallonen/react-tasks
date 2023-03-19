@@ -7,6 +7,7 @@ import {
 import App from './App'
 import './index.css'
 import { About } from './pages/About';
+import { NotFound } from './pages/NotFound';
 
 const router = createBrowserRouter([
   {
@@ -16,11 +17,13 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
 )
