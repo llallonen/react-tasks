@@ -14,7 +14,7 @@ class Header extends React.Component<{ currentPage: string }> {
     return (
       <>
         <header className="header">
-          <h1 className="header__title header__item">{this.props.currentPage} page</h1>
+          <h1 className="header__title header__item">{this.props.currentPage}</h1>
           <div className="header__item">
             <img className="header__logo" src="./public/pokemon-logo.png"></img>
           </div>

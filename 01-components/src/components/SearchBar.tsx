@@ -12,13 +12,15 @@ class SearchBar extends React.Component<SearchBarProps> {
 
   render() {
     return (
-      <input
-        className='search'
-        type="search"
-        onChange={this.props.onChange}
-        value={this.props.value}
-        placeholder="Enter something"
-      />
+      <div className="search__wrapper">
+        <input
+          className="search"
+          type="search"
+          onChange={this.props.onChange}
+          value={this.props.value}
+          placeholder="Enter something"
+        />
+      </div>
     );
   }
 }
