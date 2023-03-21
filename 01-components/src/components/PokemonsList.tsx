@@ -5,16 +5,14 @@ interface PokemonsListProps {
   pokemons?: Array<PokemonProps>;
 }
 
-interface PokemonsListState {}
-
-class PokemonsList extends React.Component<PokemonsListProps, PokemonsListState> {
+class PokemonsList extends React.Component<PokemonsListProps> {
   constructor(props: PokemonsListProps) {
     super(props);
   }
   render() {
     return !this.props.pokemons
       ? 'No pokemons :('
-      : this.props.pokemons.map((pokemon) => <Pokemon {...pokemon}/>);
+      : this.props.pokemons.map((pokemon) => <Pokemon key={pokemon.id} {...pokemon} />);
   }
 }
 

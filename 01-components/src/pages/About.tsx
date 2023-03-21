@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 const About = () => {
   let currPage = window.location.pathname.slice(1);
   if (currPage === 'about') {
-    currPage = 'About page'
+    currPage = 'About page';
   }
   return (
     <Layout currentPage={currPage}>

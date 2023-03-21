@@ -1,12 +1,15 @@
-import React, { ChangeEvent } from 'react';
-import { PokemonProps } from '../components/Pokemon';
+import React from 'react';
 import Layout from '../components/Layout';
+import { PokemonProps } from '../components/Pokemon';
 import PokemonsList from '../components/PokemonsList';
 import SearchBar from '../components/SearchBar';
 import { POKEMONS_URL } from '../variables';
 
-class Main extends React.Component<{}, { searchBarValue: string; pokemons?: Array<PokemonProps> }> {
-  constructor(props: Object) {
+class Main extends React.Component<
+  object,
+  { searchBarValue: string; pokemons?: Array<PokemonProps> }
+> {
+  constructor(props: object) {
     super(props);
     this.state = { searchBarValue: '', pokemons: undefined };
     this.onChange = this.onChange.bind(this);
@@ -26,7 +29,7 @@ class Main extends React.Component<{}, { searchBarValue: string; pokemons?: Arra
     fetch(POKEMONS_URL)
       .then((res) => res.json())
       .then((pokemons) => {
-        console.log('pokemons', pokemons)
+        console.log('pokemons', pokemons);
         this.setState({ pokemons: pokemons.pokemons });
       });
   }
@@ -48,7 +51,7 @@ class Main extends React.Component<{}, { searchBarValue: string; pokemons?: Arra
     return (
       <Layout currentPage={currPage}>
         <SearchBar value={this.state.searchBarValue} onChange={this.onChange} />
-        <PokemonsList pokemons={this.state.pokemons}/>
+        <PokemonsList pokemons={this.state.pokemons} />
       </Layout>
     );
   }
