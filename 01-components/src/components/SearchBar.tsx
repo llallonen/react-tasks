@@ -16,6 +16,7 @@ class SearchBar extends React.Component<SearchBarProps> {
         <input
           className="search"
           type="search"
+          data-testid="custom-element"
           onChange={this.props.onChange}
           value={this.props.value}
           placeholder="Enter something"
