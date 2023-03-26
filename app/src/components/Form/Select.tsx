@@ -1,4 +1,5 @@
 import React, { RefObject } from 'react';
+
 export const RegionNames = [
   'Kanto',
   'Johno',

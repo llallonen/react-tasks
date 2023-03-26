@@ -1,14 +1,16 @@
 import React from 'react';
+import { Note, TNote } from '../Note';
 import Checkbox from './Checkbox';
 import InputDate from './Date';
 import FileUploader from './FileUploader';
 import InputText from './InputText';
 import { Radio } from './Radio';
 
-type TNote = {};
 interface FormProps {}
 
-interface FormState {}
+interface FormState {
+  metPokemons: [];
+}
 
 class Form extends React.Component<FormProps, FormState> {
   private formRef = React.createRef<HTMLFormElement>();
@@ -29,20 +31,36 @@ class Form extends React.Component<FormProps, FormState> {
 
   handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
-    {
-      const values = {
-        dateOfMeeting: this.inputDateRef.current!.value,
-        pokeName: this.inputTextRef.current!.value,
-        isСaught: this.checkboxRef.current!.checked ? 'Gotcha' : 'No',
-        isShiny: this.checkboxRef.current!.checked ? 'Shiny' : 'Not shiny',
-        region: this.selectRef.current!,
-        pokePhoto: this.fileUploadRef.current!.value,
-      };
 
-      console.log(values);
-      const fileData = this.fileUploadRef.current!.files![0];
-      const imgUrl = URL.createObjectURL(fileData);
-    }
+    const values = {
+      dateOfMeeting: this.inputDateRef.current!.value,
+      pokeName: this.inputTextRef.current!.value,
+      isСaught: this.checkboxRef.current!.checked ? 'Gotcha' : 'No',
+      isShiny: this.checkboxRef.current!.checked ? 'Shiny' : 'Not shiny',
+      region: this.selectRef.current!,
+      pokePhoto: this.fileUploadRef.current!.value,
+    };
+
+    console.log(values);
+    const fileData = this.fileUploadRef.current!.files![0];
+    const imgUrl = URL.createObjectURL(fileData);
+
+    const newNote: TNote = {
+      name: values.pokeName,
+      img: imgUrl,
+      date: values.dateOfMeeting,
+      shiny: values.isShiny,
+      gotcha: values.isСaught,
+      region: values.region,
+    };
+
+    this.addNote(newNote)
+    this.formRef.current!.reset();
+  }
+
+  addNote(newNote: TNote) {
+    this.setState((prevState) => ({ ...prevState, notes: [...prevState.metPokemons, newNote] }));
+    console.log(this.state)
   }
 
   render() {
