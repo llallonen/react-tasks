@@ -91,14 +91,14 @@ body {
 .page {
   margin: 0 auto;
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
 }
 
 .page__content {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 1.4em;
+  padding: FormPageem;
 }
 
 .about {
@@ -165,4 +165,21 @@ input.search:focus {
   margin: 0;
   text-align: center;
   font-style: italic;
+}
+
+.form-page__wrapper {
+  text-align: center;
+}
+
+.form-page {
+  display: flex;
+  gap: 8vw;
+}
+
+.form-page__content {
+
+}
+
+.form__img {
+  height: 300px;
 }

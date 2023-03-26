@@ -7,7 +7,7 @@ const vitestConfig: VitestUserConfigInterface = {
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.tsx',
-  }
+  },
 };
 
 export default defineConfig({

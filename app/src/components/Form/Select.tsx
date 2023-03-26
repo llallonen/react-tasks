@@ -26,10 +26,12 @@ class Select extends React.Component<SelectProps> {
   render() {
     return (
       <label>
-        Choose pokemon's region
+        Choose pokemon&apos;s region
         <select>
           {RegionNames.map((region: Region) => (
-            <option value={region}>{region}</option>
+            <option key={RegionNames.id} value={region}>
+              {region}
+            </option>
           ))}
         </select>
       </label>

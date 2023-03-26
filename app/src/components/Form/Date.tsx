@@ -5,8 +5,11 @@ interface InputDateProps {
 }
 
 class InputDate extends React.Component<InputDateProps> {
+  constructor(props: InputDateProps) {
+    super(props);
+  }
   render() {
-    return <input type="date" ref={this.props.inputDateRef}></input>;
+    return <input type="date" ref={this.props.inputDateRef} />;
   }
 }
 
