@@ -1,0 +1,168 @@
+#root {
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  place-items: flex-start;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6em;
+  padding: 0 2vw;
+  background-color: rgb(0, 97, 170);
+  color: #ffda6c;
+}
+
+.header__title {
+  font-size: 1.6em;
+}
+
+.header__logo {
+  width: 226px;
+  height: 80px;
+}
+
+.header__item {
+  width: 20%;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 15px;
+}
+
+.header__nav a {
+  display: flex;
+  justify-content: end;
+  color: #ffda6c;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+}
+
+.header__nav a:hover,
+.header__nav a:hover {
+  display: flex;
+  color: #d8a200;
+}
+
+.page {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+.page__content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1.4em;
+}
+
+.about {
+  text-align: center;
+}
+
+.about__content {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.about__img {
+  max-width: 100%;
+  margin: 25px auto 0;
+}
+
+.search__wrapper {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+input.search {
+  display: block;
+  width: 360px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: rgb(67, 140, 196);
+  color: rgb(0, 59, 105);
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+input.search:focus {
+  box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
+  -webkit-box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
+  -moz-box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
+}
+
+.pokemon {
+  width: 200px;
+  height: 250px;
+}
+
+.pokemon__id {
+  position: absolute;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Permanent Marker', cursive;
+  color: rgb(67, 140, 196);
+}
+
+.pokemon img {
+  height: auto;
+  max-width: 80%;
+}
+.pokemon h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.pokemon p {
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+}
