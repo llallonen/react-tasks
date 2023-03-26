@@ -5,6 +5,7 @@ import FileUploader from './FileUploader';
 import InputText from './InputText';
 import { Radio } from './Radio';
 
+type TNote = {};
 interface FormProps {}
 
 interface FormState {}
@@ -32,22 +33,22 @@ class Form extends React.Component<FormProps, FormState> {
       const values = {
         dateOfMeeting: this.inputDateRef.current!.value,
         pokeName: this.inputTextRef.current!.value,
-        isСaught: this.checkboxRef.current!.checked,
-        isShiny: this.checkboxRef.current!.checked,
+        isСaught: this.checkboxRef.current!.checked ? 'Gotcha' : 'No',
+        isShiny: this.checkboxRef.current!.checked ? 'Shiny' : 'Not shiny',
         region: this.selectRef.current!,
         pokePhoto: this.fileUploadRef.current!.value,
       };
 
       console.log(values);
       const fileData = this.fileUploadRef.current!.files![0];
-      const img = URL.createObjectURL(fileData);
+      const imgUrl = URL.createObjectURL(fileData);
     }
   }
 
   render() {
     return (
       <>
-        <form className="form" onSubmit={this.handleSubmit}>
+        <form className="form" ref={this.formRef} onSubmit={this.handleSubmit.bind(this)}>
           <InputDate inputDateRef={this.inputDateRef} />
           <InputText placeholder="Name" inputTextRef={this.inputTextRef} />
           <Checkbox label="Did you catch it?" checkboxRef={this.checkboxRef} />
