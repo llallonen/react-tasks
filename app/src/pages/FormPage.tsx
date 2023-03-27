@@ -4,9 +4,8 @@ import Layout from '../components/Layout';
 import { Note, TNote } from '../components/Note';
 
 class FormPage extends React.Component<Record<string, never>, { notes: TNote[] }> {
-  constructor() {
-    super({});
-
+  constructor(props: Record<string, never>) {
+    super(props);
     this.state = { notes: [] };
   }
 
