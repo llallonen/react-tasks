@@ -171,9 +171,15 @@ input.search:focus {
   text-align: center;
 }
 
+.form-page__wrapper h1 {
+  font-size: 28px;
+  color:rgb(0, 97, 170)
+}
+
 .form-page {
   display: flex;
   gap: 5vw;
+  padding-bottom: 7vh;
 }
 
 .form {
@@ -182,12 +188,16 @@ input.search:focus {
   align-items: center;
   margin-top: 20px;
 }
-
-.form-page__content {
-}
-
 .form__img {
   height: 300px;
+}
+
+.notes__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: calc((100% - 612px)/2);
+  row-gap: 5px;
+  margin-top: 30px;
 }
 
 .note {
@@ -206,15 +216,23 @@ input.search:focus {
 }
 
 .note__img {
+  display: flex;
   height: auto;
-  max-width: 80%;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.note__img img {
+  width: 100%;
+  object-fit: contain;
 }
 
 .form__item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 330px;
   margin: 6px 0;
   border: 2px solid rgb(194 221 222);
   border-radius: 10px;
@@ -252,7 +270,9 @@ input.search:focus {
 }
 
 input.text {
-  width: 95%;
+  width: 92%;
+  padding: 5px;
+  font-size: 16px;
   border: none;
   border-bottom: 1px solid rgb(155, 158, 159);
   margin-bottom: 5px;

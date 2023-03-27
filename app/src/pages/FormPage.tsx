@@ -18,7 +18,7 @@ class FormPage extends React.Component<Record<string, never>, { notes: TNote[] }
     return (
       <Layout currentPage={currPage}>
         <div className="form-page__wrapper">
-          <h2>Add Pokémon</h2>
+          <h1>Add Pokémon</h1>
           <div className="form-page">
             <img className="form__img" src="./ash.webp"></img>
             <div className="form-page__content">
