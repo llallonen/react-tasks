@@ -11,7 +11,7 @@ class InputText extends React.Component<InputTextProps> {
   }
   render() {
     return (
-      <label>
+      <label className="form__item">
         {"Enter the pokemon's name"}
         <input
           className="text"

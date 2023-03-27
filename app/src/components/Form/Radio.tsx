@@ -8,7 +8,7 @@ interface RadioProps {
 export class Radio extends React.Component<RadioProps> {
   render() {
     return (
-      <label className="form__item">
+      <label>
         {this.props.value}
         <input
           ref={this.props.radioRef}

@@ -173,11 +173,17 @@ input.search:focus {
 
 .form-page {
   display: flex;
-  gap: 8vw;
+  gap: 5vw;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .form-page__content {
-
 }
 
 .form__img {
@@ -186,7 +192,17 @@ input.search:focus {
 
 .note {
   width: 200px;
-  height: 250px;
+  border: 2px solid rgb(194 221 222);
+  border-radius: 10px;
+}
+
+.note h3,
+.note p {
+  margin: 0;
+}
+
+.note h3 {
+  color: rgb(0, 97, 170);
 }
 
 .note__img {
@@ -195,8 +211,32 @@ input.search:focus {
 }
 
 .form__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin: 6px 0;
+  border: 2px solid rgb(194 221 222);
+  border-radius: 10px;
+}
+
+.form__submit {
   display: block;
-  max-width: 80%;
+  width: 160px;
+  height: 40px;
+  margin-top: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid rgb(194 221 222);
+  color: rgb(0, 97, 170);
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all;
+}
+
+.form__submit:hover {
+  background-color: rgb(221, 238, 238);
 }
 
 .fieldset {
@@ -204,8 +244,24 @@ input.search:focus {
   -moz-appearance: none;
   -webkit-appearance: none;
   display: flex;
+  padding: 0;
 }
 
-.fieldset label {
+.text {
+  display: block;
+}
 
+input.text {
+  width: 95%;
+  border: none;
+  border-bottom: 1px solid rgb(155, 158, 159);
+  margin-bottom: 5px;
+}
+
+.file {
+  padding: 5px 0;
+}
+
+.select {
+  padding: 5px 0;
 }

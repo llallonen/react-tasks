@@ -10,9 +10,9 @@ class FileUploader extends React.Component<FileUploaderProps> {
   }
   render() {
     return (
-      <label className="form__item">
+      <label className="form__item file">
         {'Upload photo of this pokemon'}
-        <input type="file" ref={this.props.fileUploadRef} accept=".jpg, .jpeg, .png"></input>
+        <input type="file" className="form__input"ref={this.props.fileUploadRef} accept=".jpg, .jpeg, .png"></input>
       </label>
     );
   }

@@ -32,9 +32,9 @@ export class Note extends React.Component<TNote> {
         <img className="note__img" src={this.props.img}></img>
         <div>
         <p className="pokemon__isShiny">{this.props.gotcha}</p>
-        <p className="pokemon__gotcha">{this.props.shiny}</p>
+        <p className="pokemon__gotcha"><span>Version:</span> {this.props.shiny}</p>
         </div>
-        <p className="pokemon__region">{this.props.region}</p>
+        <p className="pokemon__region"><span>Region:</span> {this.props.region}</p>
       </div>
     );
   }
