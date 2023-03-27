@@ -17,7 +17,7 @@ export interface TNote {
   date: string;
   gotcha: string;
   shiny: string;
-  region: HTMLInputElement;
+  region: string;
 }
 
 export class Note extends React.Component<TNote> {
@@ -30,8 +30,11 @@ export class Note extends React.Component<TNote> {
         <span className="note__date">{this.props.date}</span>
         <h3 className="pokemon__title">{this.props.name}</h3>
         <img className="note__img" src={this.props.img}></img>
-        <p className="pokemon__isShiny">{this.props.shiny}</p>
+        <div>
+        <p className="pokemon__isShiny">{this.props.gotcha}</p>
         <p className="pokemon__gotcha">{this.props.shiny}</p>
+        </div>
+        <p className="pokemon__region">{this.props.region}</p>
       </div>
     );
   }

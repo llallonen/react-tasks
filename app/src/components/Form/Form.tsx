@@ -6,6 +6,7 @@ import InputDate from './Date';
 import FileUploader from './FileUploader';
 import InputText from './InputText';
 import { Radio } from './Radio';
+import Select from './Select';
 
 interface FormProps {}
 
@@ -38,7 +39,7 @@ class Form extends React.Component<FormProps, FormState> {
       pokeName: this.inputTextRef.current!.value,
       isСaught: this.checkboxRef.current!.checked ? 'Gotcha' : 'No',
       isShiny: this.checkboxRef.current!.checked ? 'Shiny' : 'Not shiny',
-      region: this.selectRef.current!,
+      region: this.selectRef.current!.value,
       pokePhoto: this.fileUploadRef.current!.value,
     };
 
@@ -70,13 +71,14 @@ class Form extends React.Component<FormProps, FormState> {
           <InputDate inputDateRef={this.inputDateRef} />
           <InputText placeholder="Name" inputTextRef={this.inputTextRef} />
           <Checkbox label="Did you catch it?" checkboxRef={this.checkboxRef} />
-          <fieldset id="isShiny">
+          <fieldset className="fieldset form__item" id="isShiny">
+            <legend>Was this Pokémon shiny?</legend>
             <Radio value="Yes" radioRef={this.radioRef} />
             <Radio value="No" radioRef={this.radioRef} />
           </fieldset>
           <FileUploader fileUploadRef={this.fileUploadRef} />
-
-          <input type="submit" value="Create note" />
+          <Select selectRef={this.selectRef} />
+          <input className="" type="submit" value="Create note" />
         </form>
         <NotesList notes={this.state.metPokemons} />
       </>

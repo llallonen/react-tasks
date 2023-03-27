@@ -183,3 +183,29 @@ input.search:focus {
 .form__img {
   height: 300px;
 }
+
+.note {
+  width: 200px;
+  height: 250px;
+}
+
+.note__img {
+  height: auto;
+  max-width: 80%;
+}
+
+.form__item {
+  display: block;
+  max-width: 80%;
+}
+
+.fieldset {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+}
+
+.fieldset label {
+
+}

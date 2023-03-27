@@ -17,7 +17,7 @@ type RegionNamesTuple = typeof RegionNames;
 export type Region = RegionNamesTuple[number];
 
 interface SelectProps {
-  selectRef: RefObject<HTMLInputElement>;
+  selectRef: RefObject<HTMLSelectElement>;
 }
 
 class Select extends React.Component<SelectProps> {
@@ -26,16 +26,13 @@ class Select extends React.Component<SelectProps> {
   }
   render() {
     return (
-      <label>
-        Choose pokemon&apos;s region
-        <select>
-          {RegionNames.map((region: Region) => (
-            <option key={RegionNames.id} value={region}>
-              {region}
-            </option>
-          ))}
-        </select>
-      </label>
+      <select ref={this.props.selectRef}>
+        {RegionNames.map((region: Region, index) => (
+          <option key={index} value={region} >
+            {region}
+          </option>
+        ))}
+      </select>
     );
   }
 }

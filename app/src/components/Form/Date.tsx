@@ -9,7 +9,7 @@ class InputDate extends React.Component<InputDateProps> {
     super(props);
   }
   render() {
-    return <input type="date" ref={this.props.inputDateRef} />;
+    return <input className="form__item" type="date" ref={this.props.inputDateRef} />;
   }
 }
 

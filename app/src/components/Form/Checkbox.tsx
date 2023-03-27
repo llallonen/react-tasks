@@ -8,7 +8,7 @@ interface CheckboxProps {
 class Checkbox extends React.Component<CheckboxProps> {
   render() {
     return (
-      <label>
+      <label className='form__item'>
         {this.props.label}
         <input className="checkbox" type="checkbox" ref={this.props.checkboxRef} />
       </label>
