@@ -1,5 +1,5 @@
 import React from 'react';
-import { Note, TNote } from '../Note';
+import { TNote } from '../Note';
 import NotesList from '../NotesList';
 import Checkbox from './Checkbox';
 import InputDate from './Date';
@@ -7,8 +7,6 @@ import FileUploader from './FileUploader';
 import InputText from './InputText';
 import { Radio } from './Radio';
 import Select from './Select';
-
-interface FormProps {}
 
 interface FormState {
   message: string;
@@ -21,7 +19,7 @@ interface FormState {
   metPokemons: TNote[];
 }
 
-class Form extends React.Component<FormProps, FormState> {
+class Form extends React.Component<object, FormState> {
   private formRef = React.createRef<HTMLFormElement>();
   private inputDateRef = React.createRef<HTMLInputElement>();
   private inputTextRef = React.createRef<HTMLInputElement>();
@@ -30,7 +28,7 @@ class Form extends React.Component<FormProps, FormState> {
   private selectRef = React.createRef<HTMLSelectElement>();
   private fileUploadRef = React.createRef<HTMLInputElement>();
 
-  constructor(props: FormProps) {
+  constructor(props: object) {
     super(props);
 
     this.state = {
@@ -47,6 +45,9 @@ class Form extends React.Component<FormProps, FormState> {
 
   handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
+    this.validateName();
+    this.validateDate();
+    this.validateIsShiny();
 
     const values = {
       dateOfMeeting: this.inputDateRef.current!.value,

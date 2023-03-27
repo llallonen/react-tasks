@@ -13,7 +13,7 @@ const About = () => {
           This is a small database of the Pokémon universe. Here you can find the name, type and
           image of some Pokémon.
         </p>
-        <img className="about__img" src="./universe.webp"></img>
+        <img className="about__img" src="./public/universe.webp"></img>
       </div>
     </Layout>
   );

@@ -28,7 +28,7 @@ class Select extends React.Component<SelectProps> {
     return (
       <select className="select form__item" ref={this.props.selectRef}>
         {RegionNames.map((region: Region, index) => (
-          <option key={index} value={region} >
+          <option key={index} value={region}>
             {region}
           </option>
         ))}

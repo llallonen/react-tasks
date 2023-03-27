@@ -1,15 +1,4 @@
 import React from 'react';
-type TRegionNames =
-  | 'Kanto'
-  | 'Johno'
-  | 'Hoenn'
-  | 'Sinnoh'
-  | 'Unova'
-  | 'Kalos'
-  | 'Alola'
-  | 'Galar'
-  | 'Hisui'
-  | 'Paldea';
 
 export interface TNote {
   name: string;

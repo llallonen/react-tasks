@@ -25,6 +25,9 @@ class Header extends React.Component<{ currentPage: string }> {
             <NavLink to="/about" className="header__nav-item">
               About
             </NavLink>
+            <NavLink to="/notes" className="header__nav-item">
+              Make a note
+            </NavLink>
           </nav>
         </header>
       </>

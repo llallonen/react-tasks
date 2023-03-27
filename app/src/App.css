@@ -173,7 +173,7 @@ input.search:focus {
 
 .form-page__wrapper h1 {
   font-size: 28px;
-  color:rgb(0, 97, 170)
+  color: rgb(0, 97, 170);
 }
 
 .form-page {
@@ -195,7 +195,7 @@ input.search:focus {
 .notes__wrapper {
   display: flex;
   flex-wrap: wrap;
-  column-gap: calc((100% - 612px)/2);
+  column-gap: calc((100% - 612px) / 2);
   row-gap: 5px;
   margin-top: 30px;
 }
