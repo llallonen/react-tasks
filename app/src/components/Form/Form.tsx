@@ -1,5 +1,6 @@
 import React from 'react';
 import { Note, TNote } from '../Note';
+import NotesList from '../NotesList';
 import Checkbox from './Checkbox';
 import InputDate from './Date';
 import FileUploader from './FileUploader';
@@ -9,7 +10,7 @@ import { Radio } from './Radio';
 interface FormProps {}
 
 interface FormState {
-  metPokemons: [];
+  metPokemons: TNote[];
 }
 
 class Form extends React.Component<FormProps, FormState> {
@@ -41,7 +42,6 @@ class Form extends React.Component<FormProps, FormState> {
       pokePhoto: this.fileUploadRef.current!.value,
     };
 
-    console.log(values);
     const fileData = this.fileUploadRef.current!.files![0];
     const imgUrl = URL.createObjectURL(fileData);
 
@@ -54,13 +54,13 @@ class Form extends React.Component<FormProps, FormState> {
       region: values.region,
     };
 
-    this.addNote(newNote)
+    this.addNote(newNote);
     this.formRef.current!.reset();
   }
 
   addNote(newNote: TNote) {
-    this.setState((prevState) => ({ ...prevState, notes: [...prevState.metPokemons, newNote] }));
-    console.log(this.state)
+    this.setState({ metPokemons: [...this.state.metPokemons, newNote] });
+    console.log(this.state.metPokemons);
   }
 
   render() {
@@ -78,6 +78,7 @@ class Form extends React.Component<FormProps, FormState> {
 
           <input type="submit" value="Create note" />
         </form>
+        <NotesList notes={this.state.metPokemons} />
       </>
     );
   }

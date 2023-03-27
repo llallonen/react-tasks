@@ -9,10 +9,6 @@ class FormPage extends React.Component<Record<string, never>, { notes: TNote[] }
     this.state = { notes: [] };
   }
 
-  addNote(newNote: TNote) {
-    this.setState((prevState) => ({ ...prevState, notes: [...prevState.notes, newNote] }));
-  }
-
   render() {
     let currPage = window.location.pathname.slice(1);
     if (currPage === 'about') {
@@ -34,21 +30,6 @@ class FormPage extends React.Component<Record<string, never>, { notes: TNote[] }
               <Form />
             </div>
             <img className="form__img" src="./misty.webp"></img>
-          </div>
-          <div className="form-notes">
-            {this.state.notes.map((note, index) => {
-              return (
-                <Note
-                  key={index}
-                  img={note.img}
-                  name={note.name}
-                  date={note.date}
-                  gotcha={note.gotcha}
-                  shiny={note.shiny}
-                  region={note.region}
-                />
-              );
-            })}
           </div>
         </div>
       </Layout>

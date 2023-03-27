@@ -12,7 +12,7 @@ class NotesList extends React.Component<NotesListProps> {
   render() {
     return !this.props.notes
       ? 'Add notes about pokemons you met'
-      : this.props.notes.map((note) => <Note key={note.id} {...note} />);
+      : this.props.notes.map((note, index) => <Note key={index} {...note} />);
   }
 }
 
