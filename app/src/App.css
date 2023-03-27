@@ -1,0 +1,287 @@
+#root {
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  place-items: flex-start;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6em;
+  padding: 0 2vw;
+  background-color: rgb(0, 97, 170);
+  color: #ffda6c;
+}
+
+.header__title {
+  font-size: 1.6em;
+}
+
+.header__logo {
+  width: 226px;
+  height: 80px;
+}
+
+.header__item {
+  width: 20%;
+}
+
+.header__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  gap: 15px;
+}
+
+.header__nav a {
+  display: flex;
+  justify-content: end;
+  color: #ffda6c;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.2s ease-in;
+}
+
+.header__nav a:hover,
+.header__nav a:hover {
+  display: flex;
+  color: #d8a200;
+}
+
+.page {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.page__content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: FormPageem;
+}
+
+.about {
+  text-align: center;
+}
+
+.about__content {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.about__img {
+  max-width: 100%;
+  margin: 25px auto 0;
+}
+
+.search__wrapper {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+input.search {
+  display: block;
+  width: 360px;
+  height: 50px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: rgb(67, 140, 196);
+  color: rgb(0, 59, 105);
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+input.search:focus {
+  box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
+  -webkit-box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
+  -moz-box-shadow: 0px 0px 16px 2px rgb(255, 222, 10);
+}
+
+.pokemon {
+  width: 200px;
+  height: 250px;
+}
+
+.pokemon__id {
+  position: absolute;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Permanent Marker', cursive;
+  color: rgb(67, 140, 196);
+}
+
+.pokemon img {
+  height: auto;
+  max-width: 80%;
+}
+.pokemon h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.pokemon p {
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+}
+
+.form-page__wrapper {
+  text-align: center;
+}
+
+.form-page__wrapper h1 {
+  font-size: 28px;
+  color: rgb(0, 97, 170);
+}
+
+.form-page {
+  display: flex;
+  gap: 5vw;
+  padding-bottom: 7vh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.form__img {
+  height: 300px;
+}
+
+.notes__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: calc((100% - 612px) / 2);
+  row-gap: 5px;
+  margin-top: 30px;
+}
+
+.note {
+  width: 200px;
+  border: 2px solid rgb(194 221 222);
+  border-radius: 10px;
+}
+
+.note h3,
+.note p {
+  margin: 0;
+}
+
+.note h3 {
+  color: rgb(0, 97, 170);
+}
+
+.note__img {
+  display: flex;
+  height: auto;
+  max-width: 90%;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.note__img img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 330px;
+  margin: 6px 0;
+  border: 2px solid rgb(194 221 222);
+  border-radius: 10px;
+}
+
+.form__submit {
+  display: block;
+  width: 160px;
+  height: 40px;
+  margin-top: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 2px solid rgb(194 221 222);
+  color: rgb(0, 97, 170);
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all;
+}
+
+.form__submit:hover {
+  background-color: rgb(221, 238, 238);
+}
+
+.fieldset {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  padding: 0;
+}
+
+.text {
+  display: block;
+}
+
+input.text {
+  width: 92%;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 1px solid rgb(155, 158, 159);
+  margin-bottom: 5px;
+}
+
+.file {
+  padding: 5px 0;
+}
+
+.select {
+  padding: 5px 0;
+}
