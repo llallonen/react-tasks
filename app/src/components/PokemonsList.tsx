@@ -1,10 +1,10 @@
 import { Pokemon, PokemonProps } from './Pokemon';
 
-interface PokemonsListProps {
-  pokemons?: Array<PokemonProps>;
+export interface PokemonsListProps {
+  pokemons: Array<PokemonProps> | null;
 }
 
-function PokemonsList(props: PokemonsListProps): JSX.Element {
+export function PokemonsList(props: PokemonsListProps): JSX.Element {
   return (
     <>
       {!props.pokemons ? (
@@ -15,5 +15,3 @@ function PokemonsList(props: PokemonsListProps): JSX.Element {
     </>
   );
 }
-
-export default PokemonsList;

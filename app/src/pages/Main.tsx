@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Layout from '../components/Layout';
-import PokemonsList from '../components/PokemonsList';
+import { PokemonsList } from '../components/PokemonsList';
 import SearchBar from '../components/SearchBar';
 import useFetch from '../hooks/useFetch';
 import { POKEMONS_URL } from '../variables';
@@ -11,7 +11,6 @@ function Main() {
   const [data, setData] = useState(null);
 
   const dataPokemons = useFetch(POKEMONS_URL);
-  //console.log(dataPokemons);
 
   let currPage = window.location.pathname.slice(1);
   if (currPage.length === 0) {
