@@ -1,29 +1,28 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
-interface SearchBarProps {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+export default function SearchBar() {
+  const [searchBarValue, setSearchBarValue] = useState('');
+
+  useEffect(() => {
+    const input = localStorage.getItem('input');
+    input ? setSearchBarValue(input) : '';
+    return () => localStorage.setItem('input', searchBarValue);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('input', searchBarValue);
+  }, [searchBarValue]);
+
+  return (
+    <div className="search__wrapper">
+      <input
+        className="search"
+        type="search"
+        data-testid="custom-element"
+        onChange={(event) => setSearchBarValue(event.target.value)}
+        value={searchBarValue}
+        placeholder="Enter something"
+      />
+    </div>
+  );
 }
-
-class SearchBar extends React.Component<SearchBarProps> {
-  constructor(props: SearchBarProps) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="search__wrapper">
-        <input
-          className="search"
-          type="search"
-          data-testid="custom-element"
-          onChange={this.props.onChange}
-          value={this.props.value}
-          placeholder="Enter something"
-        />
-      </div>
-    );
-  }
-}
-
-export default SearchBar;
