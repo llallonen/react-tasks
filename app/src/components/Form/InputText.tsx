@@ -1,25 +1,17 @@
-import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
+import { InputProps } from '../../types/types';
 
-interface InputTextProps {
-  register: UseFormRegister<FieldValues>;
-  required: boolean;
-  hasError: true | null;
-  errorText: string;
-}
-
-const InputText = ({ register, required, hasError, errorText }: InputTextProps) => {
+const InputText = ({ register, required, children }: React.PropsWithChildren<InputProps>) => {
   return (
     <>
       <label className="form__item">
         {"Enter the pokemon's name"}
         <input
-          {...register('pokeName', { required: true })}
+          {...register('pokeName', { required: 'Please enter the name' })}
           className="text"
           type="text"
           placeholder="Name"
         ></input>
-        <br />
-        {hasError && <div className="form__error">{errorText}</div>}
+        {children}
       </label>
     </>
   );
