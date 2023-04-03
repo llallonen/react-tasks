@@ -1,19 +1,19 @@
-import React, { RefObject } from 'react';
+import React from 'react';
+import { InputWithLabelProps } from '../../types/types';
 
-interface CheckboxProps {
-  label: string;
-  checkboxRef: RefObject<HTMLInputElement>;
-}
-
-class Checkbox extends React.Component<CheckboxProps> {
-  render() {
-    return (
+export default function Checkbox({
+  register,
+  required,
+  label,
+  children,
+}: React.PropsWithChildren<InputWithLabelProps>) {
+  return (
+    <>
       <label className="form__item">
-        {this.props.label}
-        <input className="checkbox" type="checkbox" ref={this.props.checkboxRef} />
+        {label}
+        <input className="checkbox" type="checkbox" {...register('isCaught', { required: true })} />
       </label>
-    );
-  }
+      {children}
+    </>
+  );
 }
-
-export default Checkbox;

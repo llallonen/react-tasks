@@ -1,65 +1,16 @@
-import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
+import { ErrorMessage } from '@hookform/error-message';
+import React from 'react';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { TNote } from '../../types/types';
+import Checkbox from './Checkbox';
+import InputDate from './Date';
+import FileUploader from './FileUploader';
 import InputText from './InputText';
+import Radio from './Radio';
+import Select from './Select';
 
-function Form(props) {
-  // private formRef = React.createRef<HTMLFormElement>();
-  // private inputDateRef = React.createRef<HTMLInputElement>();
-  // private inputTextRef = React.createRef<HTMLInputElement>();
-  // private checkboxRef = React.createRef<HTMLInputElement>();
-  // private radioRef = React.createRef<HTMLInputElement>();
-  // private selectRef = React.createRef<HTMLSelectElement>();
-  // private fileUploadRef = React.createRef<HTMLInputElement>();
-
-  // constructor(props: object) {
-  //   super(props);
-
-  //   this.state = {
-  //     message: '',
-  //     errorName: '',
-  //     errorDate: '',
-  //     errorShiny: '',
-  //     errorCaught: '',
-  //     errorPhoto: '',
-  //     errorRegion: '',
-  //     metPokemons: [],
-  //   };
-  // }
-
-  // handleSubmit(event: React.SyntheticEvent<HTMLFormElement>) {
-  //   event.preventDefault();
-  //   this.validateName();
-  //   this.validateDate();
-  //   this.validateIsShiny();
-
-  //   const values = {
-  //     dateOfMeeting: this.inputDateRef.current!.value,
-  //     pokeName: this.inputTextRef.current!.value,
-  //     isСaught: this.checkboxRef.current!.checked ? 'Gotcha!' : 'No :(',
-  //     isShiny: this.checkboxRef.current!.checked ? 'Shiny' : 'Not shiny',
-  //     region: this.selectRef.current!.value,
-  //     pokePhoto: this.fileUploadRef.current!.value,
-  //   };
-
-  //   const fileData = this.fileUploadRef.current!.files![0];
-  //   const imgUrl = URL.createObjectURL(fileData);
-
-  //   const newNote: TNote = {
-  //     name: values.pokeName,
-  //     img: imgUrl,
-  //     date: values.dateOfMeeting,
-  //     shiny: values.isShiny,
-  //     gotcha: values.isСaught,
-  //     region: values.region,
-  //   };
-
-  //   this.addNote(newNote);
-  //   this.formRef.current!.reset();
-  // }
-
-  // // addNote(newNote: TNote) {
-  // //   this.setState({ metPokemons: [...this.state.metPokemons, newNote] });
-  // //   console.log(this.state.metPokemons);
-  // // }
+function Form() {
+  const [notes, setNotes] = React.useState<TNote[]>([]);
 
   const {
     register,
@@ -67,24 +18,56 @@ function Form(props) {
     formState: { errors },
   } = useForm();
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
+  function addNote (newNote: TNote)  {
+    setNotes([...notes, newNote]);
   };
 
-  console.log(errors);
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+
+    const newNote: TNote = {
+      name: data.pokeName,
+      img: data.imgUrl,
+      date: data.dateOfMeeting,
+      shiny: data.isShiny ? 'Gotcha!' : 'No :(',
+      gotcha: data.isСaught ? 'Shiny' : 'Not shiny',
+      region: data.region,
+    };
+
+    console.log(newNote);
+  };
 
   return (
     <>
       <form className="form" onSubmit={handleSubmit(onSubmit)}>
-        <InputText
-          register={register}
-          required={true}
-          hasError={errors.pokeName ? true : null}
-          errorText="Please enter name"
-        />
+        <InputText register={register} required={true}>
+          {
+            <ErrorMessage
+              errors={errors}
+              name="pokeName"
+              render={() => <div className="form__error">{'Please enter the name'}</div>}
+            />
+          }
+        </InputText>
+        <InputDate register={register} required={true}>
+          {
+            <ErrorMessage
+              errors={errors}
+              name="date"
+              render={() => <div className="form__error">{'Please choose the date'}</div>}
+            />
+          }
+        </InputDate>
+        <Checkbox label="Did you catch it?" register={register} required={false} />
+        <fieldset className="fieldset form__item" id="isShiny">
+          <legend>Was this Pokémon shiny?</legend>
+          <Radio label="Yes" register={register} required={false} />
+          <Radio label="No" register={register} required={false} />
+        </fieldset>
+        <FileUploader register={register} required={false} />
+        <Select register={register} required={true} />
         <input className="form__submit" type="submit" value="Create note" />
       </form>
-      <div className="notes__wrapper">{/* <NotesList notes={this.state.metPokemons} /> */}</div>
+      {/* <div className="notes__wrapper">{<NotesList notes={this.state.metPokemons} />}</div> */}
     </>
   );
 }

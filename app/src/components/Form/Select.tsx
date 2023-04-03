@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react';
+import { InputProps } from '../../types/types';
 
 export const RegionNames = [
   'Kanto',
@@ -16,25 +16,14 @@ export const RegionNames = [
 type RegionNamesTuple = typeof RegionNames;
 export type Region = RegionNamesTuple[number];
 
-interface SelectProps {
-  selectRef: RefObject<HTMLSelectElement>;
+export default function Select({ register, required }: InputProps) {
+  return (
+    <select className="select form__item" {...register('region')}>
+      {RegionNames.map((region: Region, index) => (
+        <option key={index} value={region}>
+          {region}
+        </option>
+      ))}
+    </select>
+  );
 }
-
-class Select extends React.Component<SelectProps> {
-  constructor(props: SelectProps) {
-    super(props);
-  }
-  render() {
-    return (
-      <select className="select form__item" ref={this.props.selectRef}>
-        {RegionNames.map((region: Region, index) => (
-          <option key={index} value={region}>
-            {region}
-          </option>
-        ))}
-      </select>
-    );
-  }
-}
-
-export default Select;

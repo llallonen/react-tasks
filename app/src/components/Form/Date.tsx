@@ -10,7 +10,7 @@ export default function InputDate({
     <label className="form__item">
       <input
         type="date"
-        {...register('date', { required: true })}
+        {...register('dateOfMeeting', { required: true })}
       />
       {children}
     </label>

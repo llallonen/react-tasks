@@ -1,23 +1,22 @@
-import React, { RefObject } from 'react';
+import React from 'react';
+import { InputWithLabelProps } from '../../types/types';
 
-interface RadioProps {
-  value: string;
-  radioRef: RefObject<HTMLInputElement>;
-}
-
-export class Radio extends React.Component<RadioProps> {
-  render() {
-    return (
-      <label>
-        {this.props.value}
-        <input
-          ref={this.props.radioRef}
-          className="radio"
-          type="radio"
-          value={this.props.value}
-          name="isShiny"
-        ></input>
-      </label>
-    );
-  }
+export default function Radio({
+  register,
+  required,
+  label,
+  children,
+}: React.PropsWithChildren<InputWithLabelProps>) {
+  return (
+    <label>
+      {label}
+      <input
+        className="radio"
+        type="radio"
+        value={label}
+        {...register('isShiny', { required: true })}
+      ></input>
+      {children}
+    </label>
+  );
 }

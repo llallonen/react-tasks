@@ -1,26 +1,15 @@
-import React, { RefObject } from 'react';
+import { InputProps } from '../../types/types';
 
-interface FileUploaderProps {
-  fileUploadRef: RefObject<HTMLInputElement>;
+export default function FileUploader({ register, required }: InputProps) {
+  return (
+    <label className="form__item file">
+      {'Upload photo of this pokemon'}
+      <input
+        type="file"
+        className="form__input"
+        accept=".jpg, .jpeg, .png"
+        {...register('imgUrl', { required: true })}
+      ></input>
+    </label>
+  );
 }
-
-class FileUploader extends React.Component<FileUploaderProps> {
-  constructor(props: FileUploaderProps) {
-    super(props);
-  }
-  render() {
-    return (
-      <label className="form__item file">
-        {'Upload photo of this pokemon'}
-        <input
-          type="file"
-          className="form__input"
-          ref={this.props.fileUploadRef}
-          accept=".jpg, .jpeg, .png"
-        ></input>
-      </label>
-    );
-  }
-}
-
-export default FileUploader;
