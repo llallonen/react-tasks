@@ -1,4 +1,4 @@
-import { FieldValues, UseFormRegister } from "react-hook-form";
+import { FieldValues, UseFormRegister } from 'react-hook-form';
 
 export interface FormDataValues {
   pokeName: string;
@@ -24,6 +24,10 @@ export interface FormState {
 export interface InputProps {
   register: UseFormRegister<FieldValues>;
   required: boolean;
+}
+
+export interface InputWithLabelProps extends InputProps {
+  label: string;
 }
 
 export interface TNote {
