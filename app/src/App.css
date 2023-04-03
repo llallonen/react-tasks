@@ -229,6 +229,7 @@ input.search:focus {
 }
 
 .form__item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -284,4 +285,13 @@ input.text {
 
 .select {
   padding: 5px 0;
+}
+
+.form__error {
+  position: absolute;
+  bottom: 7px;
+  width: 50%;  height: 19px;
+  background-color: #fbd9e2;
+  font-size: 13px;
+  text-transform: uppercase;
 }

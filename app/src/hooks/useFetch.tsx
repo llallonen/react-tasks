@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { PokemonProps } from '../components/Pokemon';
+import { useEffect, useState } from 'react';
 import { PokemonsListProps } from '../components/PokemonsList';
 
 const useFetch = (url: string) => {

@@ -1,28 +1,28 @@
-import React, { RefObject } from 'react';
+import { FieldError, FieldErrors, FieldValues, UseFormRegister } from 'react-hook-form';
 
 interface InputTextProps {
-  placeholder: string;
-  inputTextRef: RefObject<HTMLInputElement>;
+  register: UseFormRegister<FieldValues>;
+  required: boolean;
+  hasError: true | null;
+  errorText: string;
 }
 
-class InputText extends React.Component<InputTextProps> {
-  constructor(props: InputTextProps) {
-    super(props);
-  }
-  render() {
-    return (
+const InputText = ({ register, required, hasError, errorText }: InputTextProps) => {
+  return (
+    <>
       <label className="form__item">
         {"Enter the pokemon's name"}
         <input
+          {...register('pokeName', { required: true })}
           className="text"
           type="text"
-          placeholder={this.props.placeholder}
-          name="region"
-          ref={this.props.inputTextRef}
+          placeholder="Name"
         ></input>
+        <br />
+        {hasError && <div className="form__error">{errorText}</div>}
       </label>
-    );
-  }
-}
+    </>
+  );
+};
 
 export default InputText;

@@ -1,13 +1,5 @@
 import React from 'react';
-
-export interface TNote {
-  name: string;
-  img: string;
-  date: string;
-  gotcha: string;
-  shiny: string;
-  region: string;
-}
+import { TNote } from '../types/types';
 
 export class Note extends React.Component<TNote> {
   constructor(props: TNote) {
