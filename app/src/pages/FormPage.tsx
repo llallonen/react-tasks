@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from '../components/Form/Form';
 import Layout from '../components/Layout';
-import { TNote } from '../components/Note';
+import { TNote } from '../types/types';
 
 class FormPage extends React.Component<Record<string, never>, { notes: TNote[] }> {
   constructor(props: Record<string, never>) {
