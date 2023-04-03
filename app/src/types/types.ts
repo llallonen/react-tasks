@@ -1,3 +1,5 @@
+import { FieldValues, UseFormRegister } from "react-hook-form";
+
 export interface FormDataValues {
   pokeName: string;
   date: string;
@@ -17,6 +19,11 @@ export interface FormState {
   errorPhoto: string;
   errorRegion: string;
   metPokemons: TNote[];
+}
+
+export interface InputProps {
+  register: UseFormRegister<FieldValues>;
+  required: boolean;
 }
 
 export interface TNote {
