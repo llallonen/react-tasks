@@ -19,9 +19,9 @@ function Form() {
     formState: { errors },
   } = useForm();
 
-  function addNote(newNote: TNote)  {
+  function addNote(newNote: TNote) {
     setNotes([...notes, newNote]);
-  };
+  }
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     const fileData = data.img[0];
@@ -38,7 +38,7 @@ function Form() {
     };
 
     addNote(newNote);
-    console.log(notes)
+    console.log(notes);
   };
 
   return (
@@ -72,7 +72,7 @@ function Form() {
         <Select register={register} required={true} />
         <input className="form__submit" type="submit" value="Create note" />
       </form>
-      <div className="notes__wrapper">{<NotesList notes={notes} />}</div> 
+      <div className="notes__wrapper">{<NotesList notes={notes} />}</div>
     </>
   );
 }

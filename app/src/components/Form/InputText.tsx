@@ -1,6 +1,6 @@
 import { InputProps } from '../../types/types';
 
-const InputText = ({ register, required, children }: React.PropsWithChildren<InputProps>) => {
+const InputText = ({ register, children }: React.PropsWithChildren<InputProps>) => {
   return (
     <>
       <label className="form__item">

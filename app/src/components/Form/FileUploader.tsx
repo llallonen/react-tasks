@@ -1,6 +1,6 @@
 import { InputProps } from '../../types/types';
 
-export default function FileUploader({ register, required }: InputProps) {
+export default function FileUploader({ register }: InputProps) {
   return (
     <label className="form__item file">
       {'Upload photo of this pokemon'}

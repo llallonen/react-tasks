@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 export default function SearchBar() {
   const [searchBarValue, setSearchBarValue] = useState('');
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const input = localStorage.getItem('input');
-    input ? setSearchBarValue(input) : '';
-    return () => localStorage.setItem('input', searchBarValue);
+    if (input) {
+      setSearchBarValue(input);
+    }
   }, []);
 
   useEffect(() => {

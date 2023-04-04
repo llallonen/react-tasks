@@ -16,7 +16,7 @@ export const RegionNames = [
 type RegionNamesTuple = typeof RegionNames;
 export type Region = RegionNamesTuple[number];
 
-export default function Select({ register, required }: InputProps) {
+export default function Select({ register }: InputProps) {
   return (
     <select className="select form__item" {...register('region')}>
       {RegionNames.map((region: Region, index) => (

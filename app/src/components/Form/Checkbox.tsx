@@ -3,7 +3,6 @@ import { InputWithLabelProps } from '../../types/types';
 
 export default function Checkbox({
   register,
-  required,
   label,
   children,
 }: React.PropsWithChildren<InputWithLabelProps>) {
