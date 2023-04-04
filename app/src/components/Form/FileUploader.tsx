@@ -8,7 +8,7 @@ export default function FileUploader({ register, required }: InputProps) {
         type="file"
         className="form__input"
         accept=".jpg, .jpeg, .png"
-        {...register('imgUrl', { required: true })}
+        {...register('img', { required: true })}
       ></input>
     </label>
   );

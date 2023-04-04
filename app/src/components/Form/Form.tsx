@@ -8,6 +8,7 @@ import FileUploader from './FileUploader';
 import InputText from './InputText';
 import Radio from './Radio';
 import Select from './Select';
+import NotesList from '../NotesList';
 
 function Form() {
   const [notes, setNotes] = React.useState<TNote[]>([]);
@@ -18,22 +19,26 @@ function Form() {
     formState: { errors },
   } = useForm();
 
-  function addNote (newNote: TNote)  {
+  function addNote(newNote: TNote)  {
     setNotes([...notes, newNote]);
   };
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const fileData = data.img[0];
+    const imgUrl = URL.createObjectURL(fileData);
+    console.log(imgUrl);
 
     const newNote: TNote = {
       name: data.pokeName,
-      img: data.imgUrl,
+      img: imgUrl,
       date: data.dateOfMeeting,
       shiny: data.isShiny ? 'Gotcha!' : 'No :(',
       gotcha: data.isСaught ? 'Shiny' : 'Not shiny',
       region: data.region,
     };
 
-    console.log(newNote);
+    addNote(newNote);
+    console.log(notes)
   };
 
   return (
@@ -67,7 +72,7 @@ function Form() {
         <Select register={register} required={true} />
         <input className="form__submit" type="submit" value="Create note" />
       </form>
-      {/* <div className="notes__wrapper">{<NotesList notes={this.state.metPokemons} />}</div> */}
+      <div className="notes__wrapper">{<NotesList notes={notes} />}</div> 
     </>
   );
 }

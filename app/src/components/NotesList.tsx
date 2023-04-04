@@ -1,5 +1,6 @@
 import React from 'react';
-import { Note, TNote } from './Note';
+import { Note } from './Note';
+import { TNote } from '../types/types';
 
 interface NotesListProps {
   notes: Array<TNote>;

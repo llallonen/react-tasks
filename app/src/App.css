@@ -288,9 +288,10 @@ input.text {
 }
 
 .form__error {
-  position: absolute;
-  bottom: 7px;
-  width: 50%;  height: 19px;
+  width: auto;
+  height: 19px;
+  padding: 2px 5px;
+  margin-bottom: 3px;
   background-color: #fbd9e2;
   font-size: 13px;
   text-transform: uppercase;

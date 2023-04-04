@@ -6,7 +6,7 @@ export interface FormDataValues {
   select: string;
   iShiny: string;
   isCaught: string;
-  Photo: FileList;
+  Photo: string;
   Region: string;
 }
 
@@ -32,9 +32,9 @@ export interface InputWithLabelProps extends InputProps {
 
 export interface TNote {
   name: string;
-  img: string;
-  date: string;
+  img?: string;
+  date?: string;
   gotcha: string;
-  shiny: string;
-  region: string;
+  shiny?: string;
+  region?: string;
 }
