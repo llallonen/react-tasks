@@ -1,16 +1,16 @@
 import React from 'react';
-import { InputWithLabelProps } from '../../types/types';
+import { CheckboxProps, InputWithLabelProps } from '../../types/types';
 
 export default function Checkbox({
   register,
   label,
   children,
-}: React.PropsWithChildren<InputWithLabelProps>) {
+}: React.PropsWithChildren<CheckboxProps>) {
   return (
     <>
       <label className="form__item">
         {label}
-        <input className="checkbox" type="checkbox" {...register('isCaught', { required: true })} />
+        <input className="checkbox" type="checkbox" {...register('isCaught')} />
       </label>
       {children}
     </>

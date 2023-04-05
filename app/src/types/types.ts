@@ -20,13 +20,17 @@ export interface FormState {
   errorRegion: string;
   metPokemons: TNote[];
 }
-
 export interface InputProps {
   register: UseFormRegister<FieldValues>;
   required: boolean;
 }
 
 export interface InputWithLabelProps extends InputProps {
+  label: string;
+}
+
+export interface CheckboxProps {
+  register: UseFormRegister<FieldValues>;
   label: string;
 }
 

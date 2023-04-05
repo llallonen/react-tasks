@@ -32,8 +32,8 @@ function Form() {
       name: data.pokeName,
       img: imgUrl,
       date: data.dateOfMeeting,
-      shiny: data.isShiny ? 'Gotcha!' : 'No :(',
-      gotcha: data.isСaught ? 'Shiny' : 'Not shiny',
+      shiny: data.isShiny ? 'Shiny' : 'Not shiny',
+      gotcha: data.isСaught ? 'Gotcha!' : 'Not gotcha :(',
       region: data.region,
     };
 
@@ -49,7 +49,7 @@ function Form() {
             <ErrorMessage
               errors={errors}
               name="pokeName"
-              render={() => <div className="form__error">{'Please enter the name'}</div>}
+              render={() => <div className="form__error">{'Latin alphabet 3-20 symbols'}</div>}
             />
           }
         </InputText>
@@ -62,7 +62,7 @@ function Form() {
             />
           }
         </InputDate>
-        <Checkbox label="Did you catch it?" register={register} required={false} />
+        <Checkbox label="Did you catch it?" register={register}/>
         <fieldset className="fieldset form__item" id="isShiny">
           <legend>Was this Pokémon shiny?</legend>
           <Radio label="Yes" register={register} required={false} />
