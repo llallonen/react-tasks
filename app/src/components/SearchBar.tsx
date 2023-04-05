@@ -19,7 +19,7 @@ export default function SearchBar() {
       <input
         className="search"
         type="search"
-        data-testid="custom-element"
+        data-testid="search-bar"
         onChange={(event) => setSearchBarValue(event.target.value)}
         value={searchBarValue}
         placeholder="Enter something"

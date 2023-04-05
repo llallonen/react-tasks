@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, test } from 'vitest';
 import { Pokemon } from '../components/Pokemon';
 import SearchBar from '../components/SearchBar';
@@ -10,6 +10,15 @@ const testPokemon = {
   img: 'https://img.pokemondb.net/sprites/home/normal/2x/avif/pikachu.avif',
 };
 
+const setup = () => {
+  const utils = render(<SearchBar />);
+  const input = screen.getByTestId('search-bar') as HTMLInputElement;
+  return {
+    input,
+    ...utils,
+  };
+};
+
 describe('Pokemon card test', () => {
   test('Card renders', () => {
     const pokecard = render(<Pokemon {...testPokemon} />);
@@ -19,9 +28,8 @@ describe('Pokemon card test', () => {
 
 describe('Input test', () => {
   test('input takes the entered value', () => {
-    render(<SearchBar onChange={() => {}} value={'Bobbi Bob'} />);
-
-    const input = screen.getByTestId('custom-element') as HTMLInputElement;
-    expect(input.value).toBe('Bobbi Bob');
+    const { input } = setup();
+    fireEvent.change(input, { target: { value: 'Bobbi' } });
+    expect(input.value).toBe('Bobbi');
   });
 });
