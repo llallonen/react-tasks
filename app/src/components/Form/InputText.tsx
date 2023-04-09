@@ -15,6 +15,7 @@ const InputText = ({ register, children }: React.PropsWithChildren<InputProps>) 
           className="text"
           type="text"
           placeholder="Name"
+          role="name"
         ></input>
         {children}
       </label>

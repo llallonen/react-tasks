@@ -5,7 +5,7 @@ export default function InputDate({ register, children }: React.PropsWithChildre
   const maxDate = new Date().toISOString().split('T')[0];
   return (
     <label className="form__item">
-      <input type="date" max={maxDate} {...register('dateOfMeeting', { required: true })} />
+      <input type="date" max={maxDate} role="date" {...register('dateOfMeeting', { required: true })} />
       {children}
     </label>
   );

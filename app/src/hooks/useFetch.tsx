@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { PokemonsListProps } from '../components/PokemonsList';
+import { PokemonsListProps } from '../types/types';
 
 const useFetch = (url: string) => {
   const [data, setData] = useState<null | PokemonsListProps>();

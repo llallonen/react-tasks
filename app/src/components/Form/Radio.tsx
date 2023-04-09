@@ -13,6 +13,7 @@ export default function Radio({
         className="radio"
         type="radio"
         value={label}
+        role="radio"
         {...register('isShiny', { required: true })}
       ></input>
       {children}

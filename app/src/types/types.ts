@@ -1,5 +1,33 @@
 import { FieldValues, UseFormRegister } from 'react-hook-form';
 
+export interface IPokemon {
+  image: string;
+  id: number;
+  name: string;
+  types: string;
+}
+
+export interface PokemonProps {
+  pokemon: Array<IPokemon> | null
+}
+
+export interface PokemonsListProps {
+  pokemons: Array<IPokemon>;
+}
+
+export interface IPokemonResponse {
+  sprites: string;
+  id: number;
+  name: string;
+  types: {
+    slot: number;
+    type: {
+      name: string;
+      url: string;
+    };
+  }[];
+}
+
 export interface FormDataValues {
   pokeName: string;
   date: string;

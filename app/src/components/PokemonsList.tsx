@@ -1,17 +1,16 @@
-import { Pokemon, PokemonProps } from './Pokemon';
-
-export interface PokemonsListProps {
-  pokemons: Array<PokemonProps> | null;
-}
+import { PokemonsListProps } from '../types/types';
+import { PokemonProps } from '../types/types';
+import { Pokemon } from './Pokemon';
 
 export function PokemonsList(props: PokemonsListProps): JSX.Element {
+
   return (
     <>
-      {!props.pokemons ? (
+      {!props ? (
         <div>{`No any pokemons :(`}</div>
       ) : (
-        props.pokemons.map((pokemon) => <Pokemon key={pokemon.id} {...pokemon} />)
-      )}
+        props.map((pokemon) => <div><Pokemon key={pokemon.id} {...pokemon} /></div>)
+        )}
     </>
   );
 }

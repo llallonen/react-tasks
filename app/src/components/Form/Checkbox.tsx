@@ -10,7 +10,7 @@ export default function Checkbox({
     <>
       <label className="form__item">
         {label}
-        <input className="checkbox" type="checkbox" {...register('isCaught')} />
+        <input className="checkbox" type="checkbox" role="checkbox" {...register('isCaught')} />
       </label>
       {children}
     </>

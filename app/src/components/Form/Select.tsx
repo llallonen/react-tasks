@@ -18,7 +18,7 @@ export type Region = RegionNamesTuple[number];
 
 export default function Select({ register }: InputProps) {
   return (
-    <select className="select form__item" {...register('region')}>
+    <select className="select form__item" role="region" {...register('region')}>
       {RegionNames.map((region: Region, index) => (
         <option key={index} value={region}>
           {region}

@@ -70,7 +70,7 @@ function Form() {
         </fieldset>
         <FileUploader register={register} required={false} />
         <Select register={register} required={true} />
-        <input className="form__submit" type="submit" value="Create note" />
+        <input className="form__submit" type="submit" role="submit" value="Create note" />
       </form>
       <div className="notes__wrapper">{<NotesList notes={notes} />}</div>
     </>
